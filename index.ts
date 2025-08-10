@@ -406,6 +406,32 @@ server.addTool({
   },
 });
 
+server.addTool({
+  name: "get_payment_id",
+  description: "Get payment ID for Iranian Rial deposit with identifier",
+  parameters: z.object({
+    card_id: z.number().describe("Bank card ID for payment"),
+  }),
+  execute: async (params) => {
+    const { card_id } = params;
+
+    const response = await fetch(`${BASEURL}/v1/accounting/get-payment-id`, {
+      method: "POST",
+      mode: "cors",
+      headers: BASEHEADERS,
+      body: JSON.stringify({ card_id }),
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
+    }
+
+    return response.text();
+  },
+});
+
 server.start({
   transportType: "stdio",
 });
