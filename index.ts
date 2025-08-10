@@ -379,34 +379,6 @@ server.addTool({
 });
 
 server.addTool({
-  name: "settle",
-  description: "Create a settlement request",
-  parameters: z.object({
-    amount: z.number().describe("Settlement amount"),
-    card_id: z.number().describe("Bank card ID for settlement"),
-    two_factor_secret: z.string().describe("Two-factor authentication secret"),
-  }),
-  execute: async (params) => {
-    const { amount, card_id, two_factor_secret } = params;
-
-    const response = await fetch(`${BASEURL}/v1/accounting/settle`, {
-      method: "POST",
-      mode: "cors",
-      headers: BASEHEADERS,
-      body: JSON.stringify({ amount, card_id, two_factor_secret }),
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        `HTTP error! status: ${response.status} - ` + (await response.text())
-      );
-    }
-
-    return response.text();
-  },
-});
-
-server.addTool({
   name: "get_wallet_address",
   description:
     "Get wallet address for a specific symbol and network to deposit crypto currency",
@@ -422,33 +394,6 @@ server.addTool({
       mode: "cors",
       headers: BASEHEADERS,
       body: JSON.stringify({ symbol, network }),
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        `HTTP error! status: ${response.status} - ` + (await response.text())
-      );
-    }
-
-    return response.text();
-  },
-});
-
-server.addTool({
-  name: "charge_irt",
-  description: "Charge IRT to account using bank card",
-  parameters: z.object({
-    amount: z.number().describe("Amount to charge"),
-    card_id: z.number().describe("Bank card ID to use for charging"),
-  }),
-  execute: async (params) => {
-    const { amount, card_id } = params;
-
-    const response = await fetch(`${BASEURL}/v1/accounting/chargeIrt`, {
-      method: "POST",
-      mode: "cors",
-      headers: BASEHEADERS,
-      body: JSON.stringify({ amount, card_id }),
     });
 
     if (!response.ok) {
