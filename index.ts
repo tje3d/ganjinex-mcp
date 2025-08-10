@@ -32,7 +32,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -61,7 +63,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -107,7 +111,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -131,7 +137,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -176,7 +184,8 @@ server.addTool({
 
     if (!response.ok) {
       throw new Error(
-        `HTTP error! status: ${response.status} - ${url.toString()}`
+        `HTTP error! status: ${response.status} - ${url.toString()}  - ` +
+          (await response.text())
       );
     }
 
@@ -195,7 +204,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -219,7 +230,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -243,7 +256,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -261,7 +276,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -285,7 +302,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -309,7 +328,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -348,7 +369,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -374,7 +397,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -400,7 +425,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
@@ -425,7 +452,9 @@ server.addTool({
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `HTTP error! status: ${response.status} - ` + (await response.text())
+      );
     }
 
     return response.text();
